@@ -2,57 +2,39 @@
 <html>
   <head>
    <title> Y JOB Board</title> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(55, 50, 50);
-        text-lign: center;
-      }
+
       #banner {
         width: 100%;
         height: 360px;
         object-fit: cover;
-      
-      }
-
-      h2 {
-        font-display: Roboto;
-        font-size: 32px;
-        color: rgb(100, 100, 100);
-        text-align: center;
-        font-weight: normal;  
-      }
-      .bodytext {
-        font-family: Roboto;
-        color: rgb (80, 80, 80);
         
       }
 
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
     </style>
   </head>
   <body>
-    <div id="container">
-      <h1>Y JOB BOARD</h1>
-      <img id="banner" src="https://d8470372-c1d6-4fd9-aa67-43dbf09f83f1-00-fi4xziqh3rm6.picard.replit.dev/static/banner.jpeg">
-      <h2>About Y </h2>
-      <p class="bodytext">
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">{{company_name}} JOB BOARD</h1>
+      <img class="img-fluid" id="banner" src="https://d8470372-c1d6-4fd9-aa67-43dbf09f83f1-00-fi4xziqh3rm6.picard.replit.dev/static/banner.jpeg">
+      <h2 class="text-center mt-2 mb-4">About Y </h2>
+      <p class="lead">
         SeekOut unifies talent acquisition, talent management, and talent analytics in one platform. Grow your employees and recruit the people you need with actionable analytics to support every decision.
   
         Request a live demo with one of our experts and see for yourself why SeekOut is the clear leader in talent optimization.
       </p>
-      <h2>Open Positions</h2>
-      <p class="bodytext">
-        We will show the jobs here
-      </p>
-      <div style="text-align: center;">
-      <button>Reach us</button>
-        <p>Copyright 2024, Gopi</p>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <button class="btn btn-primary btn-lg mt-4 mb-2">Reach us</button>
+        <p class="mt-2">Copyright 2024, Gopi</p>
       </div>
     </div>
   </body>
